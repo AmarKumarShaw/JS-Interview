@@ -126,23 +126,23 @@
 // isSubscribed()
 
 // Ques 9 : Running the function only once in Polyfill
-function once(func,context){
-    let ran;
-    return function(){
-        if(func){
-            ran = func.apply(context || this, arguments);
-            func = null;
-        }
-        return ran;
-    }
-}
+// function once(func,context){
+//     let ran;
+//     return function(){
+//         if(func){
+//             ran = func.apply(context || this, arguments);
+//             func = null;
+//         }
+//         return ran;
+//     }
+// }
 
-const hello = once((a,b)=>console.log("once",a,b))
+// const hello = once((a,b)=>console.log("once",a,b))
 
-hello(1,2)
-hello()
-hello()
-hello(3,2)
+// hello(1,2)
+// hello()
+// hello()
+// hello(3,2)
 
-// Explanation: So here the thing is we searching the func san saving in ran and make it making function null so 
-// it cannot be re run by the things
+// // Explanation: So here the thing is we searching the func san saving in ran and make it making function null so 
+// // it cannot be re run by the things
