@@ -1,32 +1,31 @@
 Promise.myPromiseAll =  function (promises){
     return new Promise((resolve,reject)=>{
 
-        // Agar yeh promises array mie nhi hai toh error maaro 
+        // Agar yeh promises array mei nhi hai toh error maaro 
         if(!Array.isArray(promises)){
             reject(new Error ("This is a new Reject Error"))
         }
 
-
+        // Sara result empty array mei store hoga 
         const result = [];
         let promiseCount = 0;
         const n = promises.length
 
-        // Yaha check kar rhe hai ki agar kuch bhi passed nhi hai toh result push kar do
+        // Yaha check kar rhe hai ki agar kuch bhi passed nhi hai toh empty result push kar do
         if(n===0){
             resolve(result)
             return;
         }
 
-        // Yeh hai main function yaha aap main
-        // arrray revist kark value place kar rhe ho 
-        // aur count bda rhe ho jais hi count match kar pura data 
-        // ka result ekbaar mei mil jayega
+        //Yaha par aap async se every promise ko chalake dekh rhe ho and then 
+        // Dekh rhe ho ki sab sahi hai yah nahi sbko resolve one by one index mei place kar
+        // rhe ho aur error ko direct reject kar de rhe ho  
         promises.forEach(async(promiseFunc,index)=>{
             try{
                 const res  = await promiseFunc;
                 result[index] = res
-                promiseCount += 1;
-                if(promiseCount === n ){
+                promiseCount += 1; 
+                if(promiseCount === n){
                     resolve(result)
                 }
             }catch(err){
