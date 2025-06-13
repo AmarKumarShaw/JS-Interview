@@ -10,3 +10,19 @@ function FlattenArr(arr){
     },[])
 
 }
+
+// Depth wise flattning of an array 
+
+function flattenArray(arr,depth=2){
+    if(depth<1) return arr;
+    let result=[];
+
+    for (let item of arr){
+        if(Array.isArray(item)){
+            result.push(...flattenArray(item,depth-1))
+        }else{
+            result.push(item)
+        }
+    }
+    return result;
+}
