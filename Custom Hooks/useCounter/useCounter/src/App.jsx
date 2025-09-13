@@ -3,6 +3,10 @@ import './App.css'
 import {useWindowSize} from './hooks/useWindowSize'
 import useFetch from "./hooks/useFetch";
 
+import {useDebounce} from './hooks/useDebounce';
+import { useEffect, useState } from "react";
+import LocalStorage from "./components/localStorage";
+
 const App = () =>{
   // Testing useCounter Hook 
 //   const {increment,decrement,reset,count} = useCounter(0);
@@ -40,8 +44,35 @@ const App = () =>{
   //     ))}
   //   </div>
   // )
+  // 
 
-  
+
+//   Testting useDebounce Hook 
+//   const [search,setSearch] = useState("");
+//   const debouncedSearch = useDebounce(search,500);
+
+//   useEffect(()=>{
+//     console.log("API Calling....",debouncedSearch)
+//   },[debouncedSearch])
+
+// return(
+//   <div>
+//     <h1>Debounce Hook</h1>
+//     <input
+//     type="text"
+//     placeholder="Search..."
+//     value={search}
+//     onChange={(e) => setSearch(e.target.value)}
+//     />
+//   </div>
+// )
+
+return(
+  <>
+  <LocalStorage/>
+  </>
+)
+
 
 
 
