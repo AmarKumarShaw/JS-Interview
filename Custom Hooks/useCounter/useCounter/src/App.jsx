@@ -6,6 +6,7 @@ import useFetch from "./hooks/useFetch";
 import {useDebounce} from './hooks/useDebounce';
 import { useEffect, useState } from "react";
 import LocalStorage from "./components/localStorage";
+import IntersectionObserver from "./components/IntersectionObserver";
 
 const App = () =>{
   // Testing useCounter Hook 
@@ -69,7 +70,9 @@ const App = () =>{
 
 return(
   <>
-  <LocalStorage/>
+  {/* //useLocalStorage Hook */}
+  {/* <LocalStorage/> */} 
+  <IntersectionObserver/>
   </>
 )
 
